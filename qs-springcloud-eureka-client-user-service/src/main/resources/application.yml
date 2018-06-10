@@ -1,0 +1,18 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: user-service
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:pass@localhost:8761/eureka/
+  instance:
+    # 为true 表示将IP 注册到Eureka Server
+    # 为false 表示将HOST NAME 注册到Eureka Server
+    prefer-ip-address: true
+    # instance-id 为在控制台显示的文案
+    instance-id:  ${spring.application.name}:[${spring.cloud.client.ipAddress}:${server.port}]
+    # 自定义元数据Map Key value 随便填
+    metadata-map:
+      my-metadata: 我自定义的元数据
