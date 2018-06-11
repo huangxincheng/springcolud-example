@@ -12,6 +12,11 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    # 该配置可以移除这种自我保护机制，防止失效的服务也被一直访问
+    enable-self-preservation: false
+    # 该配置可以修改检查失效服务的时间，每隔10s检查失效服务，并移除列表
+    eviction-interval-timer-in-ms: 10000
 security:
   basic:
     enabled: true # 开启基于Http basic 的认证

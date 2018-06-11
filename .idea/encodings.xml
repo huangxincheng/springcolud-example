@@ -2,9 +2,9 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/qs-springcloud-base" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/qs-springcloud-eureka-client-user-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/qs-springcloud-eureka-server" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/qs-springcloud-eureka-server-ha" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/qs-springcloud-example-utils-service" charset="UTF-8" />
   </component>
 </project>

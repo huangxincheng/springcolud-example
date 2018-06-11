@@ -30,8 +30,4 @@ public class UtilsApplication {
         return new RestTemplate();
     }
 
-    @RequestMapping
-    public String hello() {
-        return "utils hello world";
-    }
 }

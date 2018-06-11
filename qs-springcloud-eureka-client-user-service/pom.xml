@@ -9,7 +9,43 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+
     <artifactId>qs-springcloud-eureka-client-user-service</artifactId>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>qs-springcloud-base</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+
+        <!-- Ribbon 负载均衡 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-started-ribbon</artifactId>
+        </dependency>
+
+        <!-- Feign 声明式 模板化 REST -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-started-feign</artifactId>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.qs.UtilsApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>

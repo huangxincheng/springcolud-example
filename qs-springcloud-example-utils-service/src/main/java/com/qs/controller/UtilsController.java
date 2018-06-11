@@ -1,6 +1,10 @@
 package com.qs.controller;
 
+import com.qs.domain.Banner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,8 +30,19 @@ public class UtilsController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
+    private static Logger logger = LoggerFactory.getLogger(UtilsController.class);
+
     @GetMapping("/instance")
     public List<ServiceInstance> showInfo() {
-        return this.discoveryClient.getInstances("user-service");
+        return this.discoveryClient.getInstances("utils-service");
+    }
+
+    @Value("${server.port}")
+    private String serverPort;
+
+    @GetMapping("/queryBanners")
+    public List<Banner> queryBanners() {
+        logger.info("当前端口: {}", serverPort);
+        return Banner.initBanners();
     }
 }

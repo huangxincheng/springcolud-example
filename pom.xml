@@ -11,6 +11,7 @@
         <module>qs-springcloud-eureka-server</module>
         <module>qs-springcloud-eureka-client-user-service</module>
         <module>qs-springcloud-example-utils-service</module>
+        <module>qs-springcloud-base</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -32,11 +33,20 @@
     </dependencyManagement>
     
     <dependencies>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>false</optional>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
-        <dependency>
+
+        <!-- 服务发现 与 服务注册 -->
+      <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>

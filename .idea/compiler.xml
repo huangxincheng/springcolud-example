@@ -9,6 +9,7 @@
         <module name="qs-springcloud-eureka-client-user-service" />
         <module name="qs-springcloud-eureka-server" />
         <module name="qs-springcloud-example-utils-service" />
+        <module name="qsspringcloudbase" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
