@@ -24,13 +24,13 @@
         <!-- Ribbon 负载均衡 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-started-ribbon</artifactId>
+            <artifactId>spring-cloud-starter-ribbon</artifactId>
         </dependency>
 
         <!-- Feign 声明式 模板化 REST -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-started-feign</artifactId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
     </dependencies>
 
