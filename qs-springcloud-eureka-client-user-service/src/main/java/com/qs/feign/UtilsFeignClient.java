@@ -17,7 +17,7 @@ import java.util.List;
  * <p>
  * 春风十里不如你
  **/
-@FeignClient(name = "util-service")
+@FeignClient(name = "utils-service")
 public interface UtilsFeignClient {
 
     @RequestMapping(value = "/utils/queryBanners", method = RequestMethod.GET)
