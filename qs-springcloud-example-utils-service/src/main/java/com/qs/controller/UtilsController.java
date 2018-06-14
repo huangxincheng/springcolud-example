@@ -1,5 +1,8 @@
 package com.qs.controller;
 
+import com.netflix.appinfo.InstanceInfo;
+import com.netflix.discovery.EurekaClient;
+import com.netflix.discovery.shared.Application;
 import com.qs.domain.Banner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,11 +33,17 @@ public class UtilsController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
+    @Autowired
+    private EurekaClient eurekaClient;
+
     private static Logger logger = LoggerFactory.getLogger(UtilsController.class);
 
     @GetMapping("/instance")
-    public List<ServiceInstance> showInfo() {
-        return this.discoveryClient.getInstances("utils-service");
+    public List<InstanceInfo> showInfo() {
+        List<ServiceInstance> instances = this.discoveryClient.getInstances("utils-service");
+        List<String> services = this.discoveryClient.getServices();
+        List<InstanceInfo> list = this.eurekaClient.getInstancesById("utils-service:[192.168.9.104:8081]");
+        return list;
     }
 
     @Value("${server.port}")
