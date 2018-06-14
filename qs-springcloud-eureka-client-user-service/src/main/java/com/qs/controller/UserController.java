@@ -30,8 +30,6 @@ public class UserController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    @Autowired
-    private RestTemplate restTemplate;
 
     @Autowired
     private LoadBalancerClient loadBalancerClient;
@@ -41,13 +39,13 @@ public class UserController {
      */
     @GetMapping("/instance")
     public List<ServiceInstance> showInfo() {
-        return this.discoveryClient.getInstances("user-service");
+        return this.discoveryClient.getInstances("USER-SERVICE");
     }
 
 
     @GetMapping("/log-instance")
     public void logUtilsInstance() {
-        ServiceInstance serviceInstance = this.loadBalancerClient.choose("utils-service");
+        ServiceInstance serviceInstance = this.loadBalancerClient.choose("UTILS-SERVICE");
         logger.info("{}:{}:{}",
                 serviceInstance.getServiceId(),
                 serviceInstance.getHost(),

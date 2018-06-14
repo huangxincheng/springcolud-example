@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+//@EnableDiscoveryClient
 /**
  * Date:   2018/5/28 19:43
  * Author: huangxincheng
@@ -22,12 +23,7 @@ import org.springframework.web.client.RestTemplate;
  * 春风十里不如你
  **/
 @SpringBootApplication
-//@EnableEurekaClient
-/**
- * @EnableDiscoveryClient 这个注解功能 和 @EnableEurekaClient 一样
- * 但是不仅仅是以Eureka作为服务的发现和注册
- */
-@EnableDiscoveryClient
+@EnableEurekaClient
 @EnableFeignClients
 public class UserApplication {
 

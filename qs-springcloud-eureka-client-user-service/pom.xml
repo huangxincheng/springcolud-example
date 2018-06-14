@@ -41,7 +41,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.qs.UtilsApplication</mainClass>
+                    <mainClass>com.qs.UserApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
