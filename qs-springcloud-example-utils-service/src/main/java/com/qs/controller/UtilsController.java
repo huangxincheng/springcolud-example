@@ -33,17 +33,13 @@ public class UtilsController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    @Autowired
-    private EurekaClient eurekaClient;
 
     private static Logger logger = LoggerFactory.getLogger(UtilsController.class);
 
     @GetMapping("/instance")
-    public List<InstanceInfo> showInfo() {
+    public List<ServiceInstance> showInfo() {
         List<ServiceInstance> instances = this.discoveryClient.getInstances("utils-service");
-        List<String> services = this.discoveryClient.getServices();
-        List<InstanceInfo> list = this.eurekaClient.getInstancesById("utils-service:[192.168.9.104:8081]");
-        return list;
+        return instances;
     }
 
     @Value("${server.port}")

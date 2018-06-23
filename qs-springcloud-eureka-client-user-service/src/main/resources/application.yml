@@ -1,6 +1,13 @@
 server:
   port: 8082
+  tomcat:
+    uri-encoding: UTF-8
 spring:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
   application:
     name: user-service
 eureka:

@@ -1,6 +1,13 @@
 server:
   port: 8081
+  tomcat:
+    uri-encoding: UTF-8
 spring:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
   application:
     name: utils-service
 eureka:
@@ -20,3 +27,4 @@ eureka:
     lease-renewal-interval-in-seconds: 10
     # 该配置指示eureka服务器在接收到最后一个心跳之后等待的时间，然后才能从列表中删除此实例 (Spring Cloud默认该配置是 90s)
     lease-expiration-duration-in-seconds: 10
+

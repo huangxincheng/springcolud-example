@@ -1,7 +1,15 @@
-
-
 server:
   port: 8761
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  application:
+    name: eureka-server
 eureka:
   instance:
     hostname: localhost
