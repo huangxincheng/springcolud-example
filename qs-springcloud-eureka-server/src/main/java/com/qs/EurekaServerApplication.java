@@ -3,6 +3,8 @@ package com.qs;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
 
 /**
  * Date:   2018/5/28 19:31
@@ -16,7 +18,9 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  **/
 @SpringBootApplication
 @EnableEurekaServer
-    public class EurekaServerApplication {
+//扫描排除带有SpringBootApplication注解的configuration
+//@ComponentScan(excludeFilters = {@ComponentScan.Filter(type=FilterType.ANNOTATION, value = SpringBootApplication.class)})
+public class EurekaServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(EurekaServerApplication.class, args);
     }
